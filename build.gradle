@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation files('lib/Index-v1.0.jar')
+}
+
+application {
+    mainClass = 'Main'
+    applicationDefaultJvmArgs = ['-Djava.library.path=lib']
+}
+
+
+run {
+    jvmArgs = ["-Djava.library.path=lib"]
+}
